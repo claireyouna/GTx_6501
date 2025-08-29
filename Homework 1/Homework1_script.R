@@ -22,7 +22,7 @@ pacman::p_load(tidyverse, kernlab, caret, kknn, modelr)
 # get data ------------------------------------------------------------------------------------
 
 # get data and format
-credit_df <- read.table('2.2credit_card_data-headersSummer2018.txt',header = T) %>% 
+credit_df <- read.table(here::here("Homework 1","2.2credit_card_data-headersSummer2018.txt"),header = T) %>% 
         as_tibble() %>% 
         dplyr::rename(., 'response_y' = R1)
 
@@ -43,7 +43,7 @@ str(credit_df)
 # linear svm ----------------------------------------------------------------------------------
 
 # set seed 
-set.seed(2)
+set.seed(123)
 
 # data frame of model parameters
 model_param <- data.frame(
